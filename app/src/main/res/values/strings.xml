@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">TeamAltF4</string>
+    <string name="home">Home</string>
+    <string name="button">Button</string>
+    <string name="information">Information</string>
+    <string name="info">info</string>
+    <string name="weather">Weather</string>
+    <string name="todo">TODO</string>
+    <string name="edit">Edit</string>
+    <string name="homebutton">HomeButton</string>
+    
+    <string-array name="Chemical_Names">
+        <item>Select your Chemical used.</item>
+        <item>EXAMPLE 1</item>
+        <item>EXAMPLE 2</item>
+        <item>EXAMPLE 3</item>
+        <item>EXAMPLE 4</item>
+        <item>EXAMPLE 5</item>
+        <item>EXAMPLE 6</item>
+    </string-array>
 </resources>
