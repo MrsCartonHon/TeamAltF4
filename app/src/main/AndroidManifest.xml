@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamAltF4">
+        <activity android:name=".EditTab"></activity>
+        <activity android:name=".MessageBoard" />
+        <activity android:name=".WeatherTab" />
+        <activity android:name=".InformationTab" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
