@@ -1,54 +1,60 @@
 package com.example.teamaltf4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InformationTab extends AppCompatActivity {
-    private Button HomeButton;
-    private Button WButton;
+
+    private EditText chemNameEdt, appDateEdt, areaSprayedEdt, regNumEdt;
+    private Button addFormBtn, readFormBtn;
+    private DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_tab);
 
-        HomeButton = (Button) findViewById(R.id.HomeButton);
-        HomeButton.setOnClickListener(new View.OnClickListener() {
+        chemNameEdt = findViewById(R.id.idEnterChemName);
+        appDateEdt = findViewById(R.id.idEnterDate);
+        areaSprayedEdt = findViewById(R.id.idEnterAreaSprayed);
+        regNumEdt = findViewById(R.id.idEnterRegisterNum);
+        addFormBtn = findViewById(R.id.idBtnAddForm);
+        readFormBtn = findViewById(R.id.idBtnReadForm);
+
+        dbHandler = new DBHandler(InformationTab.this);
+
+        addFormBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity();
+
+                String chemName = chemNameEdt.getText().toString();
+                String appDate = appDateEdt.getText().toString();
+                String areaSprayed = areaSprayedEdt.getText().toString();
+                String regNum = regNumEdt.getText().toString();
+
+                if (chemName.isEmpty() && appDate.isEmpty() && areaSprayed.isEmpty() && regNum.isEmpty()) {
+                    Toast.makeText(InformationTab.this, "Please enter all data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                dbHandler.addNewForm(chemName, appDate, areaSprayed, regNum);
+
+                Toast.makeText(InformationTab.this, "Form has been added", Toast.LENGTH_SHORT).show();
             }
         });
 
-        WButton = (Button) findViewById(R.id.WButton);
-        WButton.setOnClickListener(new View.OnClickListener() {
+        readFormBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWeatherTab();
+                Intent i = new Intent(InformationTab.this, ViewForm.class);
+                startActivity(i);
             }
         });
-
-        Spinner Chemicals = (Spinner) findViewById(R.id.chemSpin);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Chemical_Names, android.R.layout.simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Chemicals.setAdapter(adapter);
-
-    }
-
-    public void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-    public void openWeatherTab() {
-        Intent intent = new Intent(this, WeatherTab.class);
-        startActivity(intent);
     }
 }

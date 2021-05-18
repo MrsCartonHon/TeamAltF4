@@ -4,7 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".EditTab">
+
+    <EditText
+        android:id="@+id/editTextChem"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+
+    <Button
+        android:id="@+id/addChem"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:layout_margin="20dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChem"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/viewChemList"
+        android:layout_width="196dp"
+        android:layout_height="49dp"
+        android:layout_margin="20dp"
+        android:text="View Chemicals "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toEndOf="@+id/addChem"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChem"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/homeIcon"
@@ -13,9 +52,10 @@
         android:contentDescription="@string/homebutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078"
+        app:layout_constraintVertical_bias="0.976"
         app:srcCompat="@drawable/homeicon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
