@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class WeatherTab extends AppCompatActivity {
     private Button HomeButton;
@@ -32,6 +34,11 @@ public class WeatherTab extends AppCompatActivity {
                 openInfoTab();
             }
         });
+
+
+
+        WebView myWebView = (WebView) findViewById(R.id.webView);
+        myWebView.loadUrl("https://forecast.weather.gov/MapClick.php?lat=42.07469810400005&lon=-93.49997241099999#.YG9cVOhKiF4");
     }
 
     public void openMainActivity() {
@@ -42,4 +49,6 @@ public class WeatherTab extends AppCompatActivity {
         Intent intent = new Intent(this, InformationTab.class);
         startActivity(intent);
     }
+
+
 }

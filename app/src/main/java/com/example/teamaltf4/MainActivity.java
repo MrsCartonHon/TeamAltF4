@@ -1,12 +1,12 @@
 package com.example.teamaltf4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button infoButton;
@@ -36,19 +36,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        EditButton = (Button) findViewById(R.id.EditButton);
-        EditButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEditTab();
-            }
-        });
 
         ImageButton MessageIcon = (ImageButton) findViewById(R.id.msgIcon);
         MessageIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MessageBoard.class);
+                Intent intent = new Intent(MainActivity.this, MainMessage.class);
                 startActivity(intent);
             }
         });
@@ -69,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditTab.class);
         startActivity(intent);
     }
+
 
 
 }

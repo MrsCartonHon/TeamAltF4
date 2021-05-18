@@ -1,57 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InformationTab">
 
-    <Button
-        android:id="@+id/HomeButton"
-        android:layout_width="113dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="660dp"
-        android:text="@string/home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/infoButton"
-        android:layout_width="113dp"
-        android:layout_height="69dp"
-        android:text="@string/info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
-
-    <Button
-        android:id="@+id/WButton"
-        android:layout_width="113dp"
-        android:layout_height="69dp"
-        android:text="@string/weather"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
-
-    <Spinner
-        android:id="@+id/chemSpin"
+    <EditText
+        android:id="@+id/idEnterChemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:accessibilityHeading="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
+        android:layout_margin="10dp"
+        android:hint="Enter Chemical(s) Used"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/idEnterDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Date Of Application"/>
+
+    <EditText
+        android:id="@+id/idEnterAreaSprayed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Location Of Application"/>
+
+    <EditText
+        android:id="@+id/idEnterRegisterNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter EPA Registration number"/>
+
+    <Button
+        android:id="@+id/idBtnAddForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Create Form"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/idBtnReadForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Read Forms"
+        android:textAllCaps="false"/>
+
+
+
+
+
+
+</LinearLayout>
